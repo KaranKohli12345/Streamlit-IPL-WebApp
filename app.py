@@ -1,9 +1,9 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title='IPL Analysis 2.0')
+st.set_page_config(page_title='Karan Kumar | IPL Analysis Dashboard')
 
-st.sidebar.title('IPL Dashboard 2.0')
+st.sidebar.title('IPL Dashboard')
 option = st.sidebar.selectbox('What do you want to know about?', ['Team', 'Team Vs Team','Batter','Bowler'])
 
 team_images = {
@@ -42,7 +42,7 @@ if option == 'Team':
         with col2:
             st.image(team_images[team])
 
-        overall_team_record_ = requests.get('https://ipl-api-2-0-7.onrender.com/api/team-record?team={}'.format(team))
+        overall_team_record_ = requests.get('https://ipl-api-2-0-7.onrender.com/api/team-record-overall?team={}'.format(team))
 
         overall_team_record = overall_team_record_.json()
 
